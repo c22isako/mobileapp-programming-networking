@@ -40,7 +40,11 @@ app:layout_constraintLeft_toLeftOf="parent"
 app:layout_constraintRight_toRightOf="parent"
 app:layout_constraintTop_toTopOf="parent" />
 ```
-Skapade en recyclerviewitem genom layout > new > Layout Resource File. Denna gjordes till en Linear Layout.
+Skapade en recyclerviewitem genom layout > new > Layout Resource File. Denna gjordes till en Linear Layout. I denna skapade jag även en TextView.
+
+Därefter skapade vi en class, RecyclerViewAdapter. I denna implementerade vi bara de metoder som i nuläget behövs.
+
+
 
 
 Bilder läggs i samma mapp som markdown-filen.
