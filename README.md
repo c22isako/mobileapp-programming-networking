@@ -29,6 +29,18 @@ new Mountain("mountain3")));
         for(int i=0; i<mountains.size(); i++) {
             Log.d("potato", mountains.get(i).toString());
 ```
+Skapade även en recyclerView genom kodraden nedan.
+```
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/recycler_view"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+```
+Skapade en recyclerviewitem genom layout > new > Layout Resource File. Denna gjordes till en Linear Layout.
 
 
 Bilder läggs i samma mapp som markdown-filen.
