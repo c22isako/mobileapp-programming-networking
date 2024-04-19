@@ -13,20 +13,50 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
+    private List<Mountain> items;
+    private LayoutInflater layoutInflater;
+    private OnClickListener onClickListener;
 
-    @NonNull
-    @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    RecyclerViewAdapter(Context context, List<Mountain> items, OnClickListener onClickListener) {
+        this.layoutInflater = LayoutInflater.from(context);
+        this.items = items;
+        this.onClickListener = onClickListener;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
+    @NonNull
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(layoutInflater.inflate(R.layout.recyclerviewitem, parent, false));
+    }
 
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.title.setText(items.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView title;
+
+        ViewHolder(View itemView) {
+            super(itemView);
+            itemView.setOnClickListener(this);
+            title = itemView.findViewById(R.id.title);
+        }
+
+        @Override
+        public void onClick(View view) {
+            onClickListener.onClick(items.get(getAdapterPosition()));
+        }
+    }
+
+    public interface OnClickListener {
+        void onClick(Mountain item);
+    }
+
 }
+

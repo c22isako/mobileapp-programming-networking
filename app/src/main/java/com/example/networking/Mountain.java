@@ -17,7 +17,7 @@ public class Mountain {
     public Mountain(String name) {
 
         this.name = name;
-        this.location = null;
+        this.location = "unknown";
         this.height = 0;
 
     }
