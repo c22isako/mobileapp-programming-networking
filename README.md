@@ -15,6 +15,8 @@ _Du kan ta bort all text som finns sedan tidigare_.
 
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
+Hej
+
 ```
 function errorCallback(error) {
     switch(error.code) {
