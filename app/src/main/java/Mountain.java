@@ -15,10 +15,40 @@ public class Mountain {
     public Mountain(String name) {
 
         name = "no name";
-        location = null;
+        location = "no location";
         height = 0;
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return "Mountain{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 
 }
