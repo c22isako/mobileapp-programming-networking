@@ -1,3 +1,5 @@
+package com.example.networking;
+import java.util.ArrayList;
 
 public class Mountain {
 
@@ -7,16 +9,16 @@ public class Mountain {
 
     public Mountain(String name,String location,int height) {
 
-        name = "no name";
-        location = "no location";
-        height = -1;
+        this.name = "no name";
+        this.location = "no location";
+        this.height = -1;
 
     }
     public Mountain(String name) {
 
-        name = "no name";
-        location = "no location";
-        height = 0;
+        this.name = name;
+        this.location = null;
+        this.height = 0;
 
     }
 

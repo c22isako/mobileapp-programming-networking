@@ -15,23 +15,21 @@ _Du kan ta bort all text som finns sedan tidigare_.
 
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
-Hej
+Gjorde en class genom java > new > Java Class. Denna kallas för Mountain. Jag gav även classen variabler som vi ska använda senare. 
+Skapade även getters och setters för att kunna manipulera  objektens/classens data.
 
+Skapade en ArrayList där jag lätter in mountain objects, och ger dem ett namn. Detta aktiverar den constructor som bara tar in värdet name.
+Jag sätter även in 3 stycken mountains (och skapar dem) genom ArrayListen.
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+ArrayList <Mountain> mountains = new ArrayList<>(Arrays.asList(
+new Mountain("mountain1"),
+new Mountain("mountain2"),
+new Mountain("mountain3")));
+
+        for(int i=0; i<mountains.size(); i++) {
+            Log.d("potato", mountains.get(i).toString());
 ```
+
 
 Bilder läggs i samma mapp som markdown-filen.
 
