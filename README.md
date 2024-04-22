@@ -2,19 +2,6 @@
 # Rapport
 
 **Skriv din rapport här!**
-
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
 Gjorde en class genom java > new > Java Class. Denna kallas för Mountain. Jag gav även classen variabler som vi ska använda senare. 
 Skapade även getters och setters för att kunna manipulera  objektens/classens data.
 
@@ -48,20 +35,16 @@ Skapade en recyclerviewitem genom layout > new > Layout Resource File. Denna gjo
         android:id="@+id/TextViewRecyclerThing"
         />
 ```
-Därefter skapade vi en class, RecyclerViewAdapter. I denna implementerade vi bara de metoder som i nuläget behövs.
-
+Därefter skapade vi en class, RecyclerViewAdapter. I denna implementerade den kod som finns på canvas.
 ```
 @NonNull
 @Override
 public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 return null;
 }
-
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-
     }
-
     @Override
     public int getItemCount() {
         return 0;
@@ -85,6 +68,22 @@ ViewHolder(View itemView) {
 title = itemView.findViewById(R.id.TextViewRecyclerThing);
 }
 ```
+La in given URL i kodraden nedan
+```
+private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
+```
+Vilket ger oss en URL att arbeta ifrån. Därefter implementerar vi given kod ifrån canvas, vilken unmarshallear
+JSON till en lista med objekt. Detta sker i onPostExecute.
+```
+  public void onPostExecute(String json) {
+       ...
+        Type type = new TypeToken<ArrayList<RecyclerViewItem>>(){}.getType();
+        ArrayList<RecyclerViewItem> listOfMountains = gson.fromJson(json, type);
+    }
+```
+
+
+
 Bilder läggs i samma mapp som markdown-filen.
 
 ![](android.png)

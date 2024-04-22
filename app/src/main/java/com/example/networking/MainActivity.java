@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -15,7 +19,9 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     RecyclerViewAdapter adapter;
-    private final String JSON_URL = "HTTPS_URL_TO_JSON_DATA_CHANGE_THIS_URL";
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
+
+    private Gson gson;
     private final String JSON_FILE = "mountains.json";
 
     @Override
@@ -23,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        gson = new Gson();
         new JsonFile(this, this).execute(JSON_FILE);
 
         ArrayList <RecyclerViewItem> items = new ArrayList<>(Arrays.asList(
@@ -55,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     @Override
     public void onPostExecute(String json) {
         Log.d("MainActivity", json);
+        Type type = new TypeToken<ArrayList<RecyclerViewItem>>(){}.getType();
+        ArrayList<RecyclerViewItem> listOfMountains = gson.fromJson(json, type);
     }
-
 }

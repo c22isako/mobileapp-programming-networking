@@ -12,4 +12,4 @@ public class RecyclerViewItem {
         public String getTitle() {
             return title;
         }
-    }
+}
