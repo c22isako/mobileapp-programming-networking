@@ -31,12 +31,10 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
                 new RecyclerViewItem("mountain3")));
 
         for(int i = 0; i< items.size(); i++) {
-            Log.d("potato", items.get(i).toString());
+            Log.d("potato", items.get(i).getTitle());
         }
 
         adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
-
-
 
             @Override
             public void onClick(RecyclerViewItem item) {

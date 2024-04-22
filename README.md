@@ -75,7 +75,16 @@ RecyclerView view = findViewById(R.id.recycler_view);
 view.setLayoutManager(new LinearLayoutManager(this));
 view.setAdapter(adapter);
 ```
-
+Efter fel som innebar att appen krashar hittar vi felet i RecyclerViewAdapter, där "TextViewRecyclerThing" innan innehöll "title", vilket
+innebar att vi sätter in en "null" textview, vilket krashade appen. "TextViewRecyclerThing" kom ifrån recyclerviewitem.xml då genom
+android:id="@+id/TextViewRecyclerThing"
+```
+ViewHolder(View itemView) {
+...
+...
+title = itemView.findViewById(R.id.TextViewRecyclerThing);
+}
+```
 Bilder läggs i samma mapp som markdown-filen.
 
 ![](android.png)
