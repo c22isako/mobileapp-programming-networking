@@ -67,6 +67,7 @@ return null;
         return 0;
     }
 ```
+Skapade en RecyclerViewItem klass, och bytte till RecyclerViewItem i de kodrader som tidigare matchat mountains, i main activity.
 
 
 Bilder läggs i samma mapp som markdown-filen.

@@ -22,16 +22,16 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         new JsonFile(this, this).execute(JSON_FILE);
 
-        ArrayList <Mountain> mountains = new ArrayList<>(Arrays.asList(
-                new Mountain("mountain1"),
-                new Mountain("mountain2"),
-                new Mountain("mountain3")));
+        ArrayList <RecyclerViewItem> items = new ArrayList<>(Arrays.asList(
+                new RecyclerViewItem("mountain1"),
+                new RecyclerViewItem("mountain2"),
+                new RecyclerViewItem("mountain3")));
 
-        for(int i=0; i<mountains.size(); i++) {
-            Log.d("potato", mountains.get(i).toString());
+        for(int i = 0; i< items.size(); i++) {
+            Log.d("potato", items.get(i).toString());
         }
 
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mountains, new RecyclerViewAdapter.OnClickListener() {
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
             @Override
             public void onClick(Mountain item) {
                 Toast.makeText(MainActivity.this, item.getName(), Toast.LENGTH_SHORT).show();
