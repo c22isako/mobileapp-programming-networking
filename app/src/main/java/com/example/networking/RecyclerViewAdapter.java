@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private List<Mountain> items;
+    private List<RecyclerViewItem> items;
     private LayoutInflater layoutInflater;
     private OnClickListener onClickListener;
 
@@ -32,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(items.get(position).getName());
+        holder.title.setText(items.get(position).getTitle());
     }
 
     @Override
@@ -56,7 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public interface OnClickListener {
-        void onClick(Mountain item);
+        void onClick(RecyclerViewItem item);
     }
 
 }

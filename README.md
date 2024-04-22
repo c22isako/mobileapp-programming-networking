@@ -68,7 +68,13 @@ return null;
     }
 ```
 Skapade en RecyclerViewItem klass, och bytte till RecyclerViewItem i de kodrader som tidigare matchat mountains, i main activity.
+Lade även till en recyclerView i MainActivity, som vi namngett view. Denna sätter vi till den recycler view vi skapat i activity_main.xml, 
+vi sätter även view till en "Linear Layout", samt att vi sätter adaptern på view.
 
+RecyclerView view = findViewById(R.id.recycler_view);
+view.setLayoutManager(new LinearLayoutManager(this));
+view.setAdapter(adapter);
+```
 
 Bilder läggs i samma mapp som markdown-filen.
 
