@@ -35,15 +35,22 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         }
 
         adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
+
+
+
             @Override
             public void onClick(RecyclerViewItem item) {
                 Toast.makeText(MainActivity.this, item.getTitle(), Toast.LENGTH_SHORT).show();
+                Log.d("potato", "hej");
             }
+
         });
 
         RecyclerView view = findViewById(R.id.recycler_view);
         view.setLayoutManager(new LinearLayoutManager(this));
         view.setAdapter(adapter);
+
+        Log.d("potato", "Has run");
 
     }
 
