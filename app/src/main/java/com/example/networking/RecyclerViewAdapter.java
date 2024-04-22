@@ -59,5 +59,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         void onClick(RecyclerViewItem item);
     }
 
+    public void UpdateData(ArrayList<RecyclerViewItem> newRecyclerItemList) {
+
+        items.clear();
+        items.addAll(newRecyclerItemList);
+        notifyDataSetChanged();
+
+    }
+
+
 }
 

@@ -68,7 +68,7 @@ ViewHolder(View itemView) {
 title = itemView.findViewById(R.id.TextViewRecyclerThing);
 }
 ```
-La in given URL i kodraden nedan
+La in given URL i kodraden nedan, vilket get oss möjlighet att executea viss URL som används för data.
 ```
 private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
 ```
@@ -81,8 +81,20 @@ JSON till en lista med objekt. Detta sker i onPostExecute.
         ArrayList<RecyclerViewItem> listOfMountains = gson.fromJson(json, type);
     }
 ```
-
-
+La till en JsonTask för MainActivity, som executear JSON_URL.
+```
+new JsonTask(this).execute(JSON_URL);
+```
+Fixade även UpdateData, vilket tar in RecyclerViewItem och gör det till en RecyclerItemList,
+vi tar bort allting ifrån items, fyller på med datan ifrån newRecyclerItemList, och notifierar att 
+datan har uppdaterats.
+```
+    public void UpdateData(ArrayList<RecyclerViewItem> newRecyclerItemList) {
+        items.clear();
+        items.addAll(newRecyclerItemList);
+        notifyDataSetChanged();
+    }
+```
 
 Bilder läggs i samma mapp som markdown-filen.
 
