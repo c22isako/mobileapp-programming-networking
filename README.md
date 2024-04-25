@@ -87,7 +87,8 @@ new JsonTask(this).execute(JSON_URL);
 ```
 Fixade även UpdateData, vilket tar in RecyclerViewItem och gör det till en RecyclerItemList,
 vi tar bort allting ifrån items, fyller på med datan ifrån newRecyclerItemList, och notifierar att 
-datan har uppdaterats.
+datan har uppdaterats, och tidigare data på sidan har "bytts ut". Om clear metoden inte funnits, hade vi 
+sätt de äldre värderna innan de nyare.
 ```
     public void UpdateData(ArrayList<RecyclerViewItem> newRecyclerItemList) {
         items.clear();
@@ -104,6 +105,15 @@ return "RecyclerViewItem{" +
 '}';
 }
 ```
+Efter problem med att visa upp data i MainActivity, ändrade jag om och rensade metoder som inte användes, bland annat flyttade jag
+ner JsonTask till längre ner i oncreate, efter recyclerViewAdapterns "skapelse" . Efter detta lade jag även till metoden serializedName, 
+i RecyclerViewItems, för att "registrera" title som name, så att JSON datan kan länkas på ett riktigt sätt.
+```
+ @SerializedName("name")
+ private String title;
+```
+
+
 Bilder läggs i samma mapp som markdown-filen.
 
 ![](android.png)

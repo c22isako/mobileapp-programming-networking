@@ -33,23 +33,16 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         gson = new Gson();
 
-        //new JsonFile(this, this).execute(JSON_FILE);
-        //new JsonTask(this).execute(JSON_URL);
-
-       /* items = new ArrayList<>(Arrays.asList(
+       items = new ArrayList<>(Arrays.asList(
                 new RecyclerViewItem("mountain1"),
                 new RecyclerViewItem("mountain2"),
                 new RecyclerViewItem("mountain3")));
 
-        */
+        String json = gson.toJson(items);
 
-        //String json = gson.toJson(items);
-
-        /*for(int i = 0; i< items.size(); i++) {
+        for(int i = 0; i< items.size(); i++) {
             Log.d("potato", items.get(i).getTitle());
         }
-
-         */
 
         adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
 
