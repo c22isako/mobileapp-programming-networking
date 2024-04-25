@@ -136,4 +136,4 @@ holder.title.setText(items.get(position).toString());
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](RecyclerViewShowcase.png)
