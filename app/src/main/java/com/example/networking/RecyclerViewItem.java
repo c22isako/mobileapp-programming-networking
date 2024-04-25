@@ -68,12 +68,12 @@ public class RecyclerViewItem {
     public String toString() {
         return
                 " Name =" + title + '\n' +
-                ", ID =" + ID + '\n' +
-                ", type =" + type + '\n' +
-                ", company =" + company + '\n' +
-                ", location =" + location + '\n' +
-                ", size =" + size +
-                ", cost =" + cost + '\n';
+                " ID =" + ID + '\n' +
+                " type =" + type + '\n' +
+                " company =" + company + '\n' +
+                " location =" + location + '\n' +
+                " size =" + size +
+                " cost =" + cost + '\n';
 
     }
 }
