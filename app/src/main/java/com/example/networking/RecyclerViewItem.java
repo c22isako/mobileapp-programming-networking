@@ -40,17 +40,40 @@ public class RecyclerViewItem {
         return title;
     }
 
+    public String getID() {
+        return ID;
+    }
 
+    public String getType() {
+        return type;
+    }
 
+    public String getCompany() {
+        return company;
+    }
 
+    public String getLocation() {
+        return location;
+    }
 
+    public int getSize() {
+        return size;
+    }
 
+    public int getCost() {
+        return cost;
+    }
 
     @Override
     public String toString() {
-        return "RecyclerViewItem{" +
-                "title='" + title + '\'' +
-                '}';
-    }
+        return
+                " Name =" + title + '\n' +
+                ", ID =" + ID + '\n' +
+                ", type =" + type + '\n' +
+                ", company =" + company + '\n' +
+                ", location =" + location + '\n' +
+                ", size =" + size +
+                ", cost =" + cost + '\n';
 
+    }
 }
