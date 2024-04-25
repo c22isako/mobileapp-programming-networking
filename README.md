@@ -1,8 +1,5 @@
 
 # Rapport
-
-**Skriv din rapport här!**
-
 Gjorde en class genom java > new > Java Class. Denna kallas för Mountain. Jag gav även classen variabler som vi ska använda senare. 
 Skapade även getters och setters för att kunna manipulera objektens/classens data. Observera att denna klass i slutskedet inte används, 
 då den har ersätts av en RecyclerViewItem class.
@@ -72,11 +69,11 @@ ViewHolder(View itemView) {
 title = itemView.findViewById(R.id.TextViewRecyclerThing);
 }
 ```
-La in given URL i kodraden nedan, vilket get oss möjlighet att executea en URL som används för data.
+La in given URL i kodraden nedan, vilket get oss möjlighet att executea en URL som används för data,
 ```
 private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
 ```
-- Vilket ger oss en URL att arbeta ifrån. Därefter implementerar vi given kod ifrån canvas, vilken unmarshallear
+-> Vilket ger oss en URL att arbeta ifrån. Därefter implementerar vi given kod ifrån canvas, vilken unmarshallear
 JSON till en lista med objekt. Detta sker i onPostExecute.
 ```
   public void onPostExecute(String json) {
