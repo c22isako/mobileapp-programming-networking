@@ -95,7 +95,15 @@ datan har uppdaterats.
         notifyDataSetChanged();
     }
 ```
-
+Lade till en funktion toString, som vi ska använda genom att overridea denna för att visa URL informationen i RecyclerView.
+```
+@Override
+public String toString() {
+return "RecyclerViewItem{" +
+"title='" + title + '\'' +
+'}';
+}
+```
 Bilder läggs i samma mapp som markdown-filen.
 
 ![](android.png)
