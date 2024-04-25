@@ -118,7 +118,6 @@ return
 ", ID =" + ID + '\n' +
 ", type =" + type + '\n' +
 ", company =" + company + '\n' +
-", location =" + location + '\n' +
 ", size =" + size +
 ", cost =" + cost + '\n';
 }

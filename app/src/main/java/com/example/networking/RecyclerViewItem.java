@@ -70,9 +70,8 @@ public class RecyclerViewItem {
                 " Name = " + title + '\n' +
                 " ID = " + ID + '\n' +
                 " type = " + type + '\n' +
-                " company = " + company + '\n' +
                 " location = " + location + '\n' +
-                " size = " + size +
+                " size = " + size + + '\n' +
                 " cost = " + cost + '\n';
 
     }
